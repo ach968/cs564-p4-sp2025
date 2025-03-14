@@ -47,6 +47,15 @@ int main()
     // create buffer manager
 
     bufMgr = new BufMgr(num);
+    if (!bufMgr) {
+        cerr << "Failed to create buffer manager" << endl;
+        exit(1);
+    }
+
+    // Initialize j array with page numbers
+    for (i = 0; i < num; i++) {
+        j[i] = i + 1;  // Start from page 1 to avoid page 0
+    }
 
     // create dummy files
 
